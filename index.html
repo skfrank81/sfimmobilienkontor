@@ -1,645 +1,376 @@
-<!-- Favicon -->
-
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-
-<!-- Open Graph / WhatsApp -->
-
-<meta property="og:title" content="SF Immobilienkontor">
-
-<meta property="og:description" content="Immobilien · Beratung · Werte. Maßstab für Werte.">
-
-<meta property="og:type" content="website">
-
-<meta property="og:url" content="https://sfimmobilienkontor.de/">
-
-<meta property="og:image" content="https://sfimmobilienkontor.de/og-image.jpg">
-
-<meta property="og:image:type" content="image/jpeg">
-
-<meta property="og:image:width" content="1200">
-
-<meta property="og:image:height" content="630">
-
-<!-- Twitter / X -->
-
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="SF Immobilienkontor">
-
-<meta name="twitter:description" content="Immobilien · Beratung · Werte. Maßstab für Werte.">
-
-<meta name="twitter:image" content="https://sfimmobilienkontor.de/og-image.jpg"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SF Immobilienkontor | Immobilien · Beratung · Werte</title>
+    <title>SF Immobilienkontor | Immobilien in Ostholstein & Fehmarn</title>
 
     <meta name="description"
-          content="SF Immobilienkontor – persönliche, unabhängige und professionelle Begleitung rund um die Immobilie in Ostholstein und auf Fehmarn.">
+          content="SF Immobilienkontor – persönliche und unabhängige Immobilienberatung und Immobilienvermittlung in Ostholstein und auf Fehmarn. Eine neue Webpräsenz entsteht.">
 
     <meta name="keywords"
-          content="Immobilien, Immobilienberatung, Immobilienbewertung, Immobilienverkauf, Immobilienkauf, Ostholstein, Fehmarn">
+          content="Immobilien Fehmarn, Immobilien Ostholstein, Immobilienmakler Fehmarn, Immobilienmakler Ostholstein, Immobilienberatung, Immobilienvermittlung, Immobilien kaufen Fehmarn, Immobilien verkaufen Fehmarn">
 
     <meta name="robots" content="index, follow">
 
-    <meta name="author" content="SF Immobilienkontor">
+    <link rel="canonical" href="https://www.sfimmobilienkontor.de/">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
-          rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title"
+          content="SF Immobilienkontor | Immobilien · Beratung · Werte">
+    <meta property="og:description"
+          content="Persönliche und unabhängige Begleitung rund um die Immobilie in Ostholstein und auf Fehmarn.">
+    <meta property="og:url"
+          content="https://www.sfimmobilienkontor.de/">
+    <meta property="og:image"
+          content="https://www.sfimmobilienkontor.de/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="de_DE">
 
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+          content="SF Immobilienkontor | Immobilien · Beratung · Werte">
+    <meta name="twitter:description"
+          content="Persönliche und unabhängige Immobilienberatung in Ostholstein und auf Fehmarn.">
+    <meta name="twitter:image"
+          content="https://www.sfimmobilienkontor.de/og-image.jpg">
+
+    <!-- Strukturierte Daten für Suchmaschinen -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "SF Immobilienkontor",
+      "url": "https://www.sfimmobilienkontor.de/",
+      "telephone": "+49 174 1903164",
+      "email": "info@sfimmobilienkontor.de",
+      "description": "Persönliche und unabhängige Immobilienberatung und Immobilienvermittlung in Ostholstein und auf Fehmarn.",
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Ostholstein"
+        },
+        {
+          "@type": "Place",
+          "name": "Fehmarn"
+        }
+      ]
+    }
+    </script>
 
     <style>
-
-        /* ==============================
-           GRUNDEINSTELLUNGEN
-           ============================== */
-
-        :root {
-            --navy: #0b1b33;
-            --gold: #b0935a;
-            --cream: #f7f6f2;
-            --white: #ffffff;
-            --text: #202633;
-            --muted: #626875;
-            --line: rgba(11, 27, 51, 0.16);
-        }
-
-
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-
 
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
-            margin: 0;
-            background: var(--cream);
-            color: var(--text);
-
-            font-family: "Montserrat", Arial, sans-serif;
-            font-weight: 400;
-
-            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172333;
+            background: #f7f5ef;
         }
-
 
         .page {
             min-height: 100vh;
-
             display: flex;
             flex-direction: column;
         }
 
-
-
-        /* ==============================
-           KOPF
-           ============================== */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             width: 100%;
-
-            padding: 34px 6vw 22px;
-
+            padding: 34px 6vw;
             display: flex;
+            justify-content: center;
             align-items: center;
-            justify-content: space-between;
         }
 
-
-        .brand {
-            display: block;
-
-            width: min(300px, 42vw);
-        }
-
-
-        .brand img {
-            display: block;
-
-            width: 100%;
+        .logo {
+            width: min(330px, 70vw);
             height: auto;
+            display: block;
         }
 
-
-        .header-rule {
-            width: 46px;
-            height: 1px;
-
-            background: var(--gold);
-
-            opacity: 0.9;
-        }
-
-
-
-        /* ==============================
-           HAUPTBEREICH
-           ============================== */
+        /* =========================
+           MAIN
+        ========================= */
 
         main {
             flex: 1;
-
             display: flex;
             align-items: center;
-
-            padding: 7vh 6vw 9vh;
+            justify-content: center;
+            padding: 40px 6vw 70px;
         }
-
 
         .content {
-            width: min(920px, 100%);
-
-            margin: 0 auto;
+            width: 100%;
+            max-width: 920px;
+            text-align: center;
         }
-
-
-
-        /* ==============================
-           KLEINE ÜBERSCHRIFT
-           ============================== */
 
         .eyebrow {
-            margin: 0 0 30px;
-
-            color: var(--gold);
-
-            font-size: 12px;
+            font-size: 13px;
+            letter-spacing: 0.28em;
             font-weight: 600;
-
-            letter-spacing: 0.32em;
-
-            text-transform: uppercase;
+            color: #9b7b42;
+            margin-bottom: 30px;
         }
-
-
-
-        /* ==============================
-           HAUPTÜBERSCHRIFT
-           ============================== */
 
         h1 {
-            max-width: 760px;
-
-            margin: 0;
-
-            color: var(--navy);
-
-            font-family: "Cormorant Garamond", Georgia, serif;
-
-            font-size: clamp(52px, 7.2vw, 92px);
-
-            font-weight: 500;
-
-            line-height: 0.94;
-
-            letter-spacing: -0.025em;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(42px, 6vw, 78px);
+            line-height: 1.05;
+            font-weight: 400;
+            color: #172333;
+            margin-bottom: 34px;
         }
 
+        .lead {
+            max-width: 760px;
+            margin: 0 auto;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(21px, 2.5vw, 28px);
+            line-height: 1.55;
+            color: #384454;
+        }
 
-        .gold-line {
-            width: 62px;
+        .divider {
+            width: 55px;
             height: 1px;
-
-            background: var(--gold);
-
-            margin: 38px 0 34px;
+            background: #b3945c;
+            margin: 42px auto;
         }
 
-
-
-        /* ==============================
-           EINLEITUNG
-           ============================== */
-
-        .intro {
-            max-width: 760px;
-
-            margin: 0 0 34px;
-
-            color: var(--navy);
-
-            font-family: "Cormorant Garamond", Georgia, serif;
-
-            font-size: clamp(25px, 2.5vw, 34px);
-
-            line-height: 1.2;
-
-            font-weight: 500;
+        .text {
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 17px;
+            line-height: 1.85;
+            color: #4c5663;
         }
 
-
-
-        /* ==============================
-           TEXT
-           ============================== */
-
-        .body {
-            max-width: 760px;
-
-            color: var(--muted);
-
-            font-size: 15px;
-
-            line-height: 1.9;
-        }
-
-
-        .body p {
-            margin: 0 0 20px;
-        }
-
-
-
-        /* ==============================
-           CLAIM
-           ============================== */
-
-        .claim {
-            margin: 36px 0 44px;
-
-            color: var(--navy);
-
-            font-size: 12px;
-
+        .text strong {
+            color: #172333;
             font-weight: 600;
-
-            letter-spacing: 0.25em;
-
-            text-transform: uppercase;
         }
 
+        .coming {
+            margin-top: 42px;
+            font-size: 14px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #172333;
+            font-weight: 600;
+        }
 
-
-        /* ==============================
-           KONTAKT
-           ============================== */
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 34px 58px;
-
-            padding-top: 28px;
-
-            border-top: 1px solid var(--line);
-
-            max-width: 760px;
+            margin: 48px auto 0;
+            padding: 28px 34px;
+            max-width: 520px;
+            border-top: 1px solid rgba(23, 35, 51, 0.15);
+            border-bottom: 1px solid rgba(23, 35, 51, 0.15);
         }
 
-
-        .contact-label {
-            display: block;
-
-            margin-bottom: 9px;
-
-            color: var(--gold);
-
-            font-size: 10px;
-
-            font-weight: 600;
-
-            letter-spacing: 0.22em;
-
+        .contact-title {
+            font-size: 12px;
             text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #9b7b42;
+            margin-bottom: 18px;
         }
-
 
         .contact a {
-            color: var(--navy);
-
+            display: block;
+            color: #172333;
             text-decoration: none;
-
-            font-size: 15px;
-
-            transition: color 0.2s ease;
+            font-size: 18px;
+            line-height: 1.8;
         }
-
 
         .contact a:hover {
-            color: var(--gold);
+            color: #9b7b42;
         }
 
-
-
-        /* ==============================
+        /* =========================
            FOOTER
-           ============================== */
+        ========================= */
 
         footer {
-            background: var(--navy);
+            padding: 26px 6vw 32px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.7;
+            color: #7a818a;
+        }
 
-            color: rgba(255,255,255,0.78);
-
-            padding: 24px 6vw;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            gap: 20px;
-
-            font-size: 10px;
-
-            letter-spacing: 0.16em;
-
+        footer .region {
+            color: #172333;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
+            margin-bottom: 8px;
         }
 
+        /* =========================
+           MOBILE
+        ========================= */
 
-        footer strong {
-            color: #ffffff;
-
-            font-weight: 500;
-        }
-
-
-
-        /* ==============================
-           SMARTPHONE
-           ============================== */
-
-        @media (max-width: 700px) {
+        @media (max-width: 600px) {
 
             header {
-                padding: 24px 7vw 14px;
+                padding: 26px 24px;
             }
-
-
-            .brand {
-                width: min(245px, 60vw);
-            }
-
 
             main {
-                padding: 8vh 7vw 10vh;
-
-                align-items: flex-start;
+                padding: 30px 24px 50px;
             }
-
 
             .eyebrow {
+                font-size: 11px;
+                letter-spacing: 0.2em;
                 margin-bottom: 24px;
-
-                line-height: 1.6;
             }
-
 
             h1 {
-                font-size: clamp(48px, 14vw, 70px);
+                font-size: 43px;
+                line-height: 1.08;
+                margin-bottom: 28px;
             }
 
-
-            .intro {
-                font-size: 25px;
+            .lead {
+                font-size: 20px;
+                line-height: 1.5;
             }
 
-
-            .body {
-                font-size: 14px;
-
-                line-height: 1.8;
+            .divider {
+                margin: 32px auto;
             }
 
+            .text {
+                font-size: 16px;
+                line-height: 1.75;
+            }
 
             .contact {
-                gap: 22px;
+                margin-top: 38px;
+                padding: 24px 16px;
             }
 
+            .contact a {
+                font-size: 17px;
+            }
 
             footer {
-                padding: 20px 7vw;
-
-                align-items: flex-start;
-
-                flex-direction: column;
+                padding: 24px;
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
 <div class="page">
 
-
-    <!-- ==============================
-         HEADER
-         ============================== -->
-
     <header>
-
-        <a class="brand"
-           href="/"
-           aria-label="SF Immobilienkontor">
-
-            <!--
-                DEIN LOGO:
-                Die Datei muss "logo.jpg" heißen
-                und im gleichen Ordner wie diese index.html liegen.
-            -->
-
-            <img src="logo.jpg"
-                 alt="SF Immobilienkontor – Maßstab für Werte">
-
-        </a>
-
-
-        <span class="header-rule"
-              aria-hidden="true">
-        </span>
-
+        <img
+            src="/logo.jpeg"
+            alt="SF Immobilienkontor – Immobilien, Beratung, Werte"
+            class="logo">
     </header>
 
-
-
-    <!-- ==============================
-         INHALT
-         ============================== -->
 
     <main>
 
         <section class="content">
 
-
-            <p class="eyebrow">
+            <div class="eyebrow">
                 IMMOBILIEN · BERATUNG · WERTE
-            </p>
-
+            </div>
 
             <h1>
-                Hier entsteht eine neue Webpräsenz.
+                Hier entsteht<br>
+                eine neue Webpräsenz.
             </h1>
 
-
-            <div class="gold-line"
-                 aria-hidden="true">
-            </div>
-
-
-
-            <p class="intro">
-
-                SF Immobilienkontor steht für eine persönliche,
-                unabhängige und professionelle Begleitung rund
-                um die Immobilie – in Ostholstein und auf Fehmarn.
-
+            <p class="lead">
+                SF Immobilienkontor steht für persönliche,
+                unabhängige und professionelle Begleitung
+                rund um die Immobilie.
             </p>
 
+            <div class="divider"></div>
 
+            <p class="text">
+                Unser regionaler Schwerpunkt liegt in
+                <strong>Ostholstein und auf Fehmarn</strong>.
+                Wir beschäftigen uns mit
+                <strong>Immobilienvermittlung und Immobilienberatung</strong>
+                und begleiten Eigentümer, Käufer und Projektbeteiligte
+                bei Entscheidungen rund um ihre Immobilie.
+            </p>
 
-            <div class="body">
+            <p class="text" style="margin-top: 24px;">
+                Eine Immobilie ist mehr als ein Quadratmeterpreis.
+                Sie ist Vermögenswert, Lebensraum und oftmals eine
+                Entscheidung von großer Bedeutung.
+            </p>
 
-
-                <p>
-                    Eine Immobilie ist mehr als ein Quadratmeterpreis.
-                </p>
-
-
-                <p>
-                    Sie ist Vermögenswert, Lebensraum und oftmals
-                    eine Entscheidung von großer Bedeutung.
-                </p>
-
-
-                <p>
-                    Deshalb verbinden wir fundierte Einschätzung,
-                    regionale Marktkenntnis und persönliche Beratung
-                    mit einem klaren Blick für den individuellen und
-                    nachhaltigen Wert einer Immobilie.
-                </p>
-
-
-                <p>
-                    Ob Verkauf, Kauf, Immobilienbewertung oder
-                    persönliche Beratung – wir begleiten Sie mit
-                    klarer Einschätzung, Diskretion und dem Anspruch,
-                    für jede Immobilie die passende Lösung zu entwickeln.
-                </p>
-
-
-
-                <p class="claim">
-                    Persönlich. Klar. Wertorientiert.
-                </p>
-
-
-
-                <p>
-
-                    <strong>MAẞSTAB FÜR WERTE.</strong>
-
-                    <br>
-
-                    SF IMMOBILIENKONTOR
-
-                </p>
-
-
-
-                <p>
-                    Unsere Webpräsenz befindet sich derzeit im Aufbau.
-                </p>
-
-
-                <p>
-                    Sie möchten bereits jetzt mit uns sprechen?
-                </p>
-
-
-                <p>
-                    Wir sind für Sie da.
-                </p>
-
-
-                <p>
-                    Persönliche Gespräche rund um Ihre Immobilie,
-                    deren Wert und die nächsten Schritte.
-                </p>
-
-
+            <div class="coming">
+                Unsere neue Webpräsenz entsteht derzeit.
             </div>
-
-
-
-            <!-- ==============================
-                 KONTAKT
-                 ============================== -->
 
             <div class="contact">
 
-
-                <div>
-
-                    <span class="contact-label">
-                        Telefon
-                    </span>
-
-                    <a href="tel:+491741903164">
-                        0174 / 190 31 64
-                    </a>
-
+                <div class="contact-title">
+                    Persönlicher Kontakt
                 </div>
 
+                <a href="tel:+491741903164">
+                    0174 / 190 31 64
+                </a>
 
-
-                <div>
-
-                    <span class="contact-label">
-                        E-Mail
-                    </span>
-
-                    <a href="mailto:info@frankvmv.de">
-                        info@frankvmv.de
-                    </a>
-
-                </div>
-
+                <a href="mailto:info@sfimmobilienkontor.de">
+                    info@sfimmobilienkontor.de
+                </a>
 
             </div>
-
 
         </section>
 
     </main>
 
 
-
-    <!-- ==============================
-         FOOTER
-         ============================== -->
-
     <footer>
 
-        <strong>
-            SF IMMOBILIENKONTOR
-        </strong>
+        <div class="region">
+            Ostholstein · Fehmarn
+        </div>
 
-
-        <span>
-            Immobilien · Beratung · Werte
-        </span>
+        © SF Immobilienkontor
 
     </footer>
-
 
 </div>
 
