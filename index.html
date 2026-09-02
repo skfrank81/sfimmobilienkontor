@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>SF Immobilienkontor | Immobilien in Ostholstein & Fehmarn</title>
+    <title>
+        SF Immobilienkontor | Immobilien in Ostholstein & Fehmarn
+    </title>
 
     <meta name="description"
           content="SF Immobilienkontor – persönliche und unabhängige Immobilienberatung und Immobilienvermittlung in Ostholstein und auf Fehmarn. Eine neue Webpräsenz entsteht.">
@@ -13,7 +17,8 @@
     <meta name="keywords"
           content="Immobilien Fehmarn, Immobilien Ostholstein, Immobilienmakler Fehmarn, Immobilienmakler Ostholstein, Immobilienberatung, Immobilienvermittlung, Immobilien kaufen Fehmarn, Immobilien verkaufen Fehmarn">
 
-    <meta name="robots" content="index, follow">
+    <meta name="robots"
+          content="index, follow">
 
     <link rel="canonical"
           href="https://www.sfimmobilienkontor.de/">
@@ -156,21 +161,23 @@
             min-height: 100vh;
 
             display: flex;
+
             flex-direction: column;
         }
 
 
         /* =====================================================
-           HERO / WERBEBILD
+           HERO – WERBEBILD
         ====================================================== */
 
         /*
-         * Das neue Werbebild wird über die gesamte Breite
-         * dargestellt.
+         * Das Original-Werbebild enthält unten eine
+         * Kontaktleiste.
          *
-         * Das Originalbild enthält unten eine Kontaktleiste.
-         * Diese wird durch die Höhe des Hero-Bereichs
-         * bewusst abgeschnitten.
+         * Der sichtbare Hero endet VOR dieser Kontaktleiste.
+         *
+         * Das Verhältnis entspricht dem Bildbereich
+         * oberhalb der Kontaktleiste.
          */
 
         .hero {
@@ -179,35 +186,56 @@
             width: 100%;
 
             /*
-             * Das Originalbild ist 1536 px breit.
-             * Der eigentliche Bildbereich endet bei ca. 900 px.
+             * 1536 : 900
              *
-             * 1536 / 900 = ca. 1.707
+             * Dadurch bleibt das Werbebild auf allen
+             * Bildschirmgrößen proportional.
              */
             aspect-ratio: 1.707 / 1;
 
-            background-image:
-                url("/hero.jpg");
-
-            background-repeat:
-                no-repeat;
-
-            background-position:
-                center top;
-
-            background-size:
-                100% auto;
-
-            background-color:
-                #f7f5ef;
-
             overflow: hidden;
+
+            background: #f7f5ef;
+        }
+
+
+        /*
+         * Das Bild selbst wird vollständig über die
+         * verfügbare Breite skaliert.
+         *
+         * Es gibt KEIN "cover".
+         *
+         * Dadurch wird auf Mobilgeräten links und rechts
+         * nichts abgeschnitten.
+         */
+
+        .hero img {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: auto;
+
+            display: block;
+
+            max-width: none;
+
+            user-select: none;
         }
 
 
         /* =====================================================
-           WEICHER ÜBERGANG VOM BILD ZUR SEITE
+           WEICHER ÜBERGANG
         ====================================================== */
+
+        /*
+         * Dieser Verlauf liegt über dem unteren Bildbereich
+         * und führt das Foto langsam in die Seitenfarbe.
+         *
+         * Dadurch entsteht keine harte horizontale Kante.
+         */
 
         .hero::after {
             content: "";
@@ -218,12 +246,7 @@
             right: 0;
             bottom: 0;
 
-            /*
-             * Der Verlauf beginnt bereits im unteren
-             * Bereich des Fotos und geht vollständig
-             * in den Seitenhintergrund über.
-             */
-            height: 30%;
+            height: 32%;
 
             pointer-events: none;
 
@@ -231,10 +254,11 @@
                 linear-gradient(
                     to bottom,
                     rgba(247,245,239,0) 0%,
-                    rgba(247,245,239,0.08) 15%,
-                    rgba(247,245,239,0.25) 35%,
-                    rgba(247,245,239,0.55) 58%,
-                    rgba(247,245,239,0.82) 78%,
+                    rgba(247,245,239,0.04) 12%,
+                    rgba(247,245,239,0.12) 25%,
+                    rgba(247,245,239,0.28) 42%,
+                    rgba(247,245,239,0.52) 60%,
+                    rgba(247,245,239,0.78) 78%,
                     rgba(247,245,239,1) 100%
                 );
         }
@@ -254,9 +278,8 @@
             justify-content: center;
 
             /*
-             * Kein harter Abstand zwischen Bild und Text.
-             * Der Verlauf des Hero-Bereichs geht direkt
-             * in den Hintergrund über.
+             * Kein zusätzlicher harter Abstand zwischen
+             * Bild und Inhalt.
              */
             padding:
                 0 6vw 70px;
@@ -284,7 +307,8 @@
 
             font-weight: 600;
 
-            color: #9b7b42;
+            color:
+                #9b7b42;
 
             margin-bottom:
                 30px;
@@ -404,7 +428,7 @@
 
 
         /* =====================================================
-           HINWEIS
+           COMING SOON
         ====================================================== */
 
         .coming {
@@ -532,39 +556,86 @@
 
 
         /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                /*
+                 * Auch auf Tablets exakt proportional.
+                 */
+                aspect-ratio:
+                    1.707 / 1;
+            }
+
+            .hero::after {
+                height:
+                    34%;
+            }
+
+            main {
+                padding:
+                    0 5vw 60px;
+            }
+
+        }
+
+
+        /* =====================================================
            MOBILE
         ====================================================== */
 
         @media (max-width: 600px) {
 
             /*
-             * Das Bild bleibt vollständig proportional.
-             * Auch hier wird die Kontaktleiste des
-             * Originalbildes nicht angezeigt.
+             * WICHTIG:
+             *
+             * Nicht "background-size: auto 100%".
+             *
+             * Das würde das Bild auf dem iPhone beschneiden.
+             *
+             * Stattdessen bleibt das Verhältnis exakt gleich
+             * und das komplette Werbebild wird über die
+             * gesamte Bildschirmbreite dargestellt.
              */
+
             .hero {
+                width: 100%;
+
                 aspect-ratio:
-                    1.15 / 1;
-
-                background-size:
-                    auto 100%;
-
-                background-position:
-                    center top;
+                    1.707 / 1;
             }
 
 
+            .hero img {
+                width: 100%;
+
+                height: auto;
+
+                left: 0;
+                top: 0;
+            }
+
+
+            /*
+             * Besonders weicher Übergang auf kleinen
+             * Displays.
+             */
+
             .hero::after {
                 height:
-                    35%;
+                    38%;
 
                 background:
                     linear-gradient(
                         to bottom,
                         rgba(247,245,239,0) 0%,
-                        rgba(247,245,239,0.12) 20%,
-                        rgba(247,245,239,0.40) 45%,
-                        rgba(247,245,239,0.75) 70%,
+                        rgba(247,245,239,0.05) 12%,
+                        rgba(247,245,239,0.16) 28%,
+                        rgba(247,245,239,0.38) 48%,
+                        rgba(247,245,239,0.68) 70%,
+                        rgba(247,245,239,0.90) 86%,
                         rgba(247,245,239,1) 100%
                     );
             }
@@ -624,6 +695,18 @@
             }
 
 
+            .coming {
+                margin-top:
+                    38px;
+
+                font-size:
+                    12px;
+
+                line-height:
+                    1.6;
+            }
+
+
             .contact {
                 margin-top:
                     38px;
@@ -658,17 +741,22 @@
 
 
     <!-- =====================================================
-         NEUES WERBEBILD
+         HERO
     ====================================================== -->
 
     <section
         class="hero"
         aria-label="SF Immobilienkontor – Vermittlung, Beratung und Projekte">
+
+        <img
+            src="/hero.jpg"
+            alt="SF Immobilienkontor – Vermittlung, Beratung und Projekte">
+
     </section>
 
 
     <!-- =====================================================
-         DEIN BISHERIGER INHALT
+         DEIN BESTEHENDER INHALT
     ====================================================== -->
 
     <main>
@@ -720,21 +808,25 @@
 
             <div class="contact">
 
-
                 <div class="contact-title">
+
                     Persönlicher Kontakt
+
                 </div>
 
 
                 <a href="tel:+491741903164">
+
                     0174 / 190 31 64
+
                 </a>
 
 
                 <a href="mailto:info@sfimmobilienkontor.de">
-                    info@frankvmv.de
-                </a>
 
+                    info@frankvmv.de
+
+                </a>
 
             </div>
 
@@ -751,8 +843,11 @@
     <footer>
 
         <div class="region">
+
             Ostholstein · Fehmarn
+
         </div>
+
 
         © SF Immobilienkontor
 
