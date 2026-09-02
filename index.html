@@ -15,36 +15,76 @@
 
     <meta name="robots" content="index, follow">
 
-    <link rel="canonical" href="https://www.sfimmobilienkontor.de/">
+    <link rel="canonical"
+          href="https://www.sfimmobilienkontor.de/">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicon-96x96.png">
+
+
+    <!-- =====================================================
+         OPEN GRAPH / WHATSAPP
+    ====================================================== -->
+
+    <meta property="og:type"
+          content="website">
+
     <meta property="og:title"
           content="SF Immobilienkontor | Vermittlung · Beratung · Projekte">
+
     <meta property="og:description"
           content="Persönliche, unabhängige Beratung und Begleitung rund um die Immobilie in Ostholstein und auf Fehmarn.">
+
     <meta property="og:url"
           content="https://www.sfimmobilienkontor.de/">
+
     <meta property="og:image"
           content="https://www.sfimmobilienkontor.de/og-image.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="de_DE">
 
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image:type"
+          content="image/jpeg">
+
+    <meta property="og:image:width"
+          content="1200">
+
+    <meta property="og:image:height"
+          content="630">
+
+    <meta property="og:image:alt"
+          content="SF Immobilienkontor – Maßstab für Werte">
+
+    <meta property="og:locale"
+          content="de_DE">
+
+
+    <!-- =====================================================
+         TWITTER / X
+    ====================================================== -->
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
     <meta name="twitter:title"
           content="SF Immobilienkontor | Vermittlung · Beratung · Projekte">
+
     <meta name="twitter:description"
           content="Persönliche und unabhängige Immobilienberatung in Ostholstein und auf Fehmarn.">
+
     <meta name="twitter:image"
           content="https://www.sfimmobilienkontor.de/og-image.jpg">
 
-    <!-- Strukturierte Daten für Suchmaschinen -->
+
+    <!-- =====================================================
+         STRUKTURIERTE DATEN
+    ====================================================== -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -67,7 +107,28 @@
     }
     </script>
 
+
+    <!-- =====================================================
+         SCHRIFTEN
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+          rel="stylesheet">
+
+
     <style>
+
+        /* =====================================================
+           GRUNDLAYOUT
+        ====================================================== */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -80,283 +141,612 @@
 
         body {
             min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             color: #172333;
+
             background: #f7f5ef;
         }
 
         .page {
             min-height: 100vh;
+
             display: flex;
             flex-direction: column;
         }
 
-        /* =========================
-           HEADER
-        ========================= */
 
-        header {
+        /* =====================================================
+           HERO / WERBEBILD
+        ====================================================== */
+
+        /*
+         * Das neue Werbebild wird über die gesamte Breite
+         * dargestellt.
+         *
+         * Das Originalbild enthält unten eine Kontaktleiste.
+         * Diese wird durch die Höhe des Hero-Bereichs
+         * bewusst abgeschnitten.
+         */
+
+        .hero {
+            position: relative;
+
             width: 100%;
-            padding: 34px 6vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
+            /*
+             * Das Originalbild ist 1536 px breit.
+             * Der eigentliche Bildbereich endet bei ca. 900 px.
+             *
+             * 1536 / 900 = ca. 1.707
+             */
+            aspect-ratio: 1.707 / 1;
+
+            background-image:
+                url("/hero.jpg");
+
+            background-repeat:
+                no-repeat;
+
+            background-position:
+                center top;
+
+            background-size:
+                100% auto;
+
+            background-color:
+                #f7f5ef;
+
+            overflow: hidden;
         }
 
-        .logo {
-            width: min(330px, 70vw);
-            height: auto;
-            display: block;
+
+        /* =====================================================
+           WEICHER ÜBERGANG VOM BILD ZUR SEITE
+        ====================================================== */
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            /*
+             * Der Verlauf beginnt bereits im unteren
+             * Bereich des Fotos und geht vollständig
+             * in den Seitenhintergrund über.
+             */
+            height: 30%;
+
+            pointer-events: none;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(247,245,239,0) 0%,
+                    rgba(247,245,239,0.08) 15%,
+                    rgba(247,245,239,0.25) 35%,
+                    rgba(247,245,239,0.55) 58%,
+                    rgba(247,245,239,0.82) 78%,
+                    rgba(247,245,239,1) 100%
+                );
         }
 
-        /* =========================
+
+        /* =====================================================
            MAIN
-        ========================= */
+        ====================================================== */
 
         main {
             flex: 1;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
-            padding: 40px 6vw 70px;
+
+            /*
+             * Kein harter Abstand zwischen Bild und Text.
+             * Der Verlauf des Hero-Bereichs geht direkt
+             * in den Hintergrund über.
+             */
+            padding:
+                0 6vw 70px;
         }
+
 
         .content {
             width: 100%;
+
             max-width: 920px;
+
             text-align: center;
         }
+
+
+        /* =====================================================
+           EYEBROW
+        ====================================================== */
 
         .eyebrow {
             font-size: 13px;
-            letter-spacing: 0.28em;
+
+            letter-spacing:
+                0.28em;
+
             font-weight: 600;
+
             color: #9b7b42;
-            margin-bottom: 30px;
+
+            margin-bottom:
+                30px;
         }
+
+
+        /* =====================================================
+           HAUPTÜBERSCHRIFT
+        ====================================================== */
 
         h1 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(42px, 6vw, 78px);
-            line-height: 1.05;
-            font-weight: 400;
-            color: #172333;
-            margin-bottom: 34px;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    42px,
+                    6vw,
+                    78px
+                );
+
+            line-height:
+                1.05;
+
+            font-weight:
+                400;
+
+            color:
+                #172333;
+
+            margin-bottom:
+                34px;
         }
+
+
+        /* =====================================================
+           LEAD
+        ====================================================== */
 
         .lead {
-            max-width: 760px;
-            margin: 0 auto;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(21px, 2.5vw, 28px);
-            line-height: 1.55;
-            color: #384454;
+            max-width:
+                760px;
+
+            margin:
+                0 auto;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    21px,
+                    2.5vw,
+                    28px
+                );
+
+            line-height:
+                1.55;
+
+            color:
+                #384454;
         }
+
+
+        /* =====================================================
+           TRENNLINIE
+        ====================================================== */
 
         .divider {
-            width: 55px;
-            height: 1px;
-            background: #b3945c;
-            margin: 42px auto;
+            width:
+                55px;
+
+            height:
+                1px;
+
+            background:
+                #b3945c;
+
+            margin:
+                42px auto;
         }
+
+
+        /* =====================================================
+           TEXT
+        ====================================================== */
 
         .text {
-            max-width: 720px;
-            margin: 0 auto;
-            font-size: 17px;
-            line-height: 1.85;
-            color: #4c5663;
+            max-width:
+                720px;
+
+            margin:
+                0 auto;
+
+            font-size:
+                17px;
+
+            line-height:
+                1.85;
+
+            color:
+                #4c5663;
         }
+
 
         .text strong {
-            color: #172333;
-            font-weight: 600;
+            color:
+                #172333;
+
+            font-weight:
+                600;
         }
+
+
+        /* =====================================================
+           HINWEIS
+        ====================================================== */
 
         .coming {
-            margin-top: 42px;
-            font-size: 14px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #172333;
-            font-weight: 600;
+            margin-top:
+                42px;
+
+            font-size:
+                14px;
+
+            letter-spacing:
+                0.08em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #172333;
+
+            font-weight:
+                600;
         }
 
-        /* =========================
-           CONTACT
-        ========================= */
+
+        /* =====================================================
+           KONTAKT
+        ====================================================== */
 
         .contact {
-            margin: 48px auto 0;
-            padding: 28px 34px;
-            max-width: 520px;
-            border-top: 1px solid rgba(23, 35, 51, 0.15);
-            border-bottom: 1px solid rgba(23, 35, 51, 0.15);
+            margin:
+                48px auto 0;
+
+            padding:
+                28px 34px;
+
+            max-width:
+                520px;
+
+            border-top:
+                1px solid
+                rgba(23, 35, 51, 0.15);
+
+            border-bottom:
+                1px solid
+                rgba(23, 35, 51, 0.15);
         }
+
 
         .contact-title {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: #9b7b42;
-            margin-bottom: 18px;
+            font-size:
+                12px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                0.2em;
+
+            color:
+                #9b7b42;
+
+            margin-bottom:
+                18px;
         }
+
 
         .contact a {
-            display: block;
-            color: #172333;
-            text-decoration: none;
-            font-size: 18px;
-            line-height: 1.8;
+            display:
+                block;
+
+            color:
+                #172333;
+
+            text-decoration:
+                none;
+
+            font-size:
+                18px;
+
+            line-height:
+                1.8;
         }
+
 
         .contact a:hover {
-            color: #9b7b42;
+            color:
+                #9b7b42;
         }
 
-        /* =========================
+
+        /* =====================================================
            FOOTER
-        ========================= */
+        ====================================================== */
 
         footer {
-            padding: 26px 6vw 32px;
-            text-align: center;
-            font-size: 12px;
-            line-height: 1.7;
-            color: #7a818a;
+            padding:
+                26px 6vw 32px;
+
+            text-align:
+                center;
+
+            font-size:
+                12px;
+
+            line-height:
+                1.7;
+
+            color:
+                #7a818a;
         }
+
 
         footer .region {
-            color: #172333;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 8px;
+            color:
+                #172333;
+
+            letter-spacing:
+                0.12em;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                8px;
         }
 
-        /* =========================
+
+        /* =====================================================
            MOBILE
-        ========================= */
+        ====================================================== */
 
         @media (max-width: 600px) {
 
-            header {
-                padding: 26px 24px;
+            /*
+             * Das Bild bleibt vollständig proportional.
+             * Auch hier wird die Kontaktleiste des
+             * Originalbildes nicht angezeigt.
+             */
+            .hero {
+                aspect-ratio:
+                    1.15 / 1;
+
+                background-size:
+                    auto 100%;
+
+                background-position:
+                    center top;
             }
+
+
+            .hero::after {
+                height:
+                    35%;
+
+                background:
+                    linear-gradient(
+                        to bottom,
+                        rgba(247,245,239,0) 0%,
+                        rgba(247,245,239,0.12) 20%,
+                        rgba(247,245,239,0.40) 45%,
+                        rgba(247,245,239,0.75) 70%,
+                        rgba(247,245,239,1) 100%
+                    );
+            }
+
 
             main {
-                padding: 30px 24px 50px;
+                padding:
+                    0 24px 50px;
             }
+
 
             .eyebrow {
-                font-size: 11px;
-                letter-spacing: 0.2em;
-                margin-bottom: 24px;
+                font-size:
+                    11px;
+
+                letter-spacing:
+                    0.2em;
+
+                margin-bottom:
+                    24px;
             }
+
 
             h1 {
-                font-size: 43px;
-                line-height: 1.08;
-                margin-bottom: 28px;
+                font-size:
+                    43px;
+
+                line-height:
+                    1.08;
+
+                margin-bottom:
+                    28px;
             }
+
 
             .lead {
-                font-size: 20px;
-                line-height: 1.5;
+                font-size:
+                    20px;
+
+                line-height:
+                    1.5;
             }
+
 
             .divider {
-                margin: 32px auto;
+                margin:
+                    32px auto;
             }
+
 
             .text {
-                font-size: 16px;
-                line-height: 1.75;
+                font-size:
+                    16px;
+
+                line-height:
+                    1.75;
             }
+
 
             .contact {
-                margin-top: 38px;
-                padding: 24px 16px;
+                margin-top:
+                    38px;
+
+                padding:
+                    24px 16px;
             }
+
 
             .contact a {
-                font-size: 17px;
+                font-size:
+                    17px;
             }
 
+
             footer {
-                padding: 24px;
+                padding:
+                    24px;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
 <div class="page">
 
-    <header>
-        <img
-            src="/logo.jpeg"
-            alt="SF Immobilienkontor – Immobilien, Beratung, Werte"
-            class="logo">
-    </header>
 
+    <!-- =====================================================
+         NEUES WERBEBILD
+    ====================================================== -->
+
+    <section
+        class="hero"
+        aria-label="SF Immobilienkontor – Vermittlung, Beratung und Projekte">
+    </section>
+
+
+    <!-- =====================================================
+         DEIN BISHERIGER INHALT
+    ====================================================== -->
 
     <main>
 
         <section class="content">
 
+
             <div class="eyebrow">
                 VERMITTLUNG · BERATUNG · PROJEKTE
             </div>
+
 
             <h1>
                 Hier entsteht<br>
                 eine neue Webpräsenz.
             </h1>
 
+
             <p class="lead">
+
                 SF Immobilienkontor steht für persönliche,
                 unabhängige, professionelle Beratung und Begleitung
                 rund um die Immobilie.
+
             </p>
+
 
             <div class="divider"></div>
 
+
             <p class="text">
+
                 Unser regionaler Schwerpunkt liegt in
                 <strong>Ostholstein und auf Fehmarn</strong>.
                 Wir beschäftigen uns mit
                 <strong>Immobilienvermittlung und Immobilienberatung</strong>
                 und begleiten Eigentümer, Käufer und Projektbeteiligte
                 bei Entscheidungen rund um ihre Immobilie.
+
             </p>
 
 
-
             <div class="coming">
+
                 Unsere neue Webpräsenz entsteht derzeit.
+
             </div>
 
+
             <div class="contact">
+
 
                 <div class="contact-title">
                     Persönlicher Kontakt
                 </div>
 
+
                 <a href="tel:+491741903164">
                     0174 / 190 31 64
                 </a>
+
 
                 <a href="mailto:info@sfimmobilienkontor.de">
                     info@frankvmv.de
                 </a>
 
+
             </div>
+
 
         </section>
 
     </main>
 
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
     <footer>
 
@@ -368,7 +758,9 @@
 
     </footer>
 
+
 </div>
+
 
 </body>
 </html>
